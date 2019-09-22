@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
-
+# 导入一些必要的方法
 from keras import Sequential
 from keras.backend import image_data_format
 from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
-
+# 定义图像长、宽
 img_width, img_height = 224, 224
-
+# 判断通道类型
 if image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
 else:
@@ -25,4 +25,4 @@ model.compile(loss='categorical_crossentropy',
               optimizer='sgd',
               metrics=['accuracy'])
 
-model.summary()
+model.summary() # 打印模型
